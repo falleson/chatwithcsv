@@ -19,8 +19,7 @@ async def main():
     kernel.add_text_completion_service("text_llm",text_llm)
     kernel.add_text_embedding_generation_service("embedding_llm2",embedding_llm)
    
-    db_conn = 'postgresql://user:Rpc4d:Q2c4j@talkwithdata.postgres.database.azure.com:5432/cntalkwithdata'
-    # db_conn2 = 'postgresql://pwcuser1:P#ssw0rd@luispgserver.postgres.database.azure.com:5432/postgres'
+    db_conn = '{postgres_connetion_string}'
     memoryStore = PostgresMemoryStore(db_conn,1024,1,5)
     kernel.register_memory_store(memoryStore)
  
